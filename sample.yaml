@@ -9,16 +9,13 @@ sample:
     sample:
       build: .
   services:
-    http:
+    sample-8080/tcp:
       container: sample
       port: 8080
       host-port: 8080
       publish: false
       protocol: TCP
-      description: Default port for web app
   variables:
-    java.version:
-      env: java.version
-      type: string
-      description: Java version required to run the application
-      value: '1.8'
+    spring-profiles-active:
+      env: SPRING_PROFILES_ACTIVE
+      value: '!!!SETME!!!'
