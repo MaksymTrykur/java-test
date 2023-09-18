@@ -1,0 +1,21 @@
+namespace: sample
+sample:
+  defines: runnable
+  metadata:
+    name: sample
+    description: Sample Java Application
+    icon: https://www.oracle.com/favicon.ico
+  containers:
+    sample:
+      build: .
+  services:
+    sample-8080-tcp:
+      container: sample
+      port: 8080
+      host-port: 8080
+      publish: false
+      protocol: TCP
+  variables:
+    java-env:
+      env: JAVA_ENV
+      value: '!!!SETME!!!'
