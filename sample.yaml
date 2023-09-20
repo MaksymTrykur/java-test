@@ -1,0 +1,16 @@
+namespace: sample
+sample:
+  defines: runnable
+  metadata:
+    name: sample
+    description: Sample Java Application
+    icon: https://emojiapi.dev/api/v1/robot.svg
+  containers:
+    sample:
+      build: .
+  variables:
+    java-version:
+      env: java_version
+      type: string
+      description: Target java version to use, libraries depend on this version.
+      value: '1.8'
