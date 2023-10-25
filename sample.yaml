@@ -1,0 +1,11 @@
+namespace: sample
+sample:
+  defines: runnable
+  metadata:
+    name: sample
+    description: A Sample Java Application
+    icon: https://emojiapi.dev/api/v1/robot.svg
+  containers:
+    sample:
+      build: .
+      image: env-1755.registry.local/sample:main-cd9dd94
