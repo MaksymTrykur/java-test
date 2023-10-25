@@ -1,0 +1,26 @@
+namespace: sample
+sample:
+  defines: runnable
+  metadata:
+    name: sample
+    description: Sample Java Application
+    icon: https://emojiapi.dev/api/v1/robot.svg
+  containers:
+    sample:
+      build: .
+      image: env-1755.registry.local/sample:main-cd9dd94
+      dockerfile: Dockerfile
+  services:
+    8080-tcp:
+      container: sample
+      port: 8080
+      host-port: 8080
+      publish: false
+      protocol: TCP
+      description: Application port
+  variables:
+    java-version:
+      env: JAVA_VERSION
+      type: string
+      description: Version of Java used for the application.
+      value: '1.8'
